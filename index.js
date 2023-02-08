@@ -47,6 +47,10 @@ app.use(morgan((tokens, req, res) => {
 }))
 app.use(cors())
 
+//Building prodiction
+app.use(express.static('dist')) //Use this to deploy the frontend into production
+//End of production
+
 app.get('/api/persons', (request, response) => {
   response.json(persons)
 })
